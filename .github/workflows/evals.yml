@@ -1,0 +1,33 @@
+name: evals
+
+# Runs on every push to main and every PR. No API key needed — the
+# deterministic assertion path and the regression gate run fully offline.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Harness unit tests
+        run: npm test
+
+      - name: Assertion suite (offline, no secrets)
+        run: npm run eval
+
+      - name: Regression gate (fails on any regression vs baseline.json)
+        run: npm run regression

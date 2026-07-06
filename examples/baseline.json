@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-07-06T05:17:05.514Z",
+  "dataset": "examples/dataset.jsonl",
+  "target": "examples/target.ts",
+  "tests": {
+    "greeting-en": true,
+    "about-jordan": true,
+    "concise-summary": true,
+    "refuse-pii": true,
+    "contact-email": true,
+    "tone-judge": true
+  }
+}

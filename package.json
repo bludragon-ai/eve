@@ -1,0 +1,41 @@
+{
+  "name": "eval-harness",
+  "version": "0.1.0",
+  "description": "Provider-agnostic eval harness for LLM and agent outputs: deterministic assertions, a pluggable 0-1 LLM judge, and a real regression gate that fails CI.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "eval-harness": "src/runner.ts"
+  },
+  "files": [
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "eval": "tsx src/runner.ts --dataset examples/dataset.jsonl --target examples/target.ts",
+    "regression": "tsx src/regression.ts --dataset examples/dataset.jsonl --target examples/target.ts --baseline examples/baseline.json",
+    "regression:update": "tsx src/regression.ts --dataset examples/dataset.jsonl --target examples/target.ts --baseline examples/baseline.json --update"
+  },
+  "keywords": [
+    "evals",
+    "llm",
+    "assertions",
+    "llm-as-judge",
+    "regression",
+    "ci",
+    "testing"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.0.0"
+  }
+}
