@@ -1,6 +1,6 @@
 # eval-harness
 
-[![evals](https://github.com/bludragon-ai/eval-harness/actions/workflows/evals.yml/badge.svg)](https://github.com/bludragon-ai/eval-harness/actions/workflows/evals.yml)
+[![evals](https://github.com/bludragon-ai/eve/actions/workflows/evals.yml/badge.svg)](https://github.com/bludragon-ai/eve/actions/workflows/evals.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![node](https://img.shields.io/badge/node-%E2%89%A520-brightgreen.svg)](https://nodejs.org)
 
@@ -29,7 +29,7 @@ vendor. It's the smallest thing that turns "looks good to me" into a CI gate.
 ## Install (3 steps)
 
 ```bash
-git clone https://github.com/bludragon-ai/eval-harness && cd eval-harness
+git clone https://github.com/bludragon-ai/eve && cd eve
 npm install
 npm test          # runs green, offline, zero secrets
 ```
